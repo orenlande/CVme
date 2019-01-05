@@ -49,6 +49,7 @@
 		 */
 		_showPicker: function() {
 			var accessToken = gapi.auth.getToken().access_token;
+			console.log(accessToken);
 			this.picker = new google.picker.PickerBuilder().
 				addView(google.picker.ViewId.DOCUMENTS).
 				setAppId(this.clientId).
