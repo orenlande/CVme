@@ -93,6 +93,7 @@
     function pickerCallback(data) {
       if (data.action == google.picker.Action.PICKED) {
         var fileId = data.docs[0].id;
+        console.log(data);
         alert('The user selected: ' + fileId);
       }
     }
