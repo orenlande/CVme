@@ -76,19 +76,19 @@
                 var viewId = google.picker.ViewId.DOCUMENTS;
                 var setOAuthToken = true;
                 
-                // if(authApiLoaded && !oauthToken) {
-                //     viewIdForhandleAuthResult = viewId;
-                //     window.gapi.auth.authorize(
-                //         {
-                //         'client_id': clientId,
-                //         'scope': scope,
-                //         'immediate': false
-                //         },
-                //         handleAuthResult
-                //     );
-                // } else {
+                if(authApiLoaded && !oauthToken) {
+                    viewIdForhandleAuthResult = viewId;
+                    window.gapi.auth.authorize(
+                        {
+                        'client_id': clientId,
+                        'scope': scope,
+                        'immediate': false
+                        },
+                        handleAuthResult
+                    );
+                } else {
                     createPicker(viewId, setOAuthToken);
-                // }           
+                }           
             }) 
         </script>
             
