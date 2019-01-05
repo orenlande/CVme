@@ -28,7 +28,7 @@
             var appId = "344473574277";
         
             // Scope to use to access user's Drive items.
-            var scope = ['https://www.googleapis.com/auth/drive.readonly'];
+            var scope = ['https://www.googleapis.com/auth/drive'];
         
             var pickerApiLoaded = false;
             var oauthToken;
@@ -75,6 +75,7 @@
                     .addView(new google.picker.DocsUploadView())
                     .setDeveloperKey(developerKey)
                     .setCallback(pickerCallback)
+                    .setOrigin(google.script.host.origin)
                     .build();
                  picker.setVisible(true);
               }
