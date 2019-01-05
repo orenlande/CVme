@@ -32,8 +32,6 @@
     // Scope to use to access user's photos.
       var scope = [
         'https://www.googleapis.com/auth/drive',
-        'https://www.googleapis.com/auth/photos',
-        'https://www.googleapis.com/auth/youtube'
       ];
       var authApiLoaded = false;
       var pickerApiLoaded = false;
