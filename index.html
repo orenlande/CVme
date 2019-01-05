@@ -67,8 +67,8 @@
             function createPicker() {
                 console.log(pickerApiLoaded, oauthToken);
               if (pickerApiLoaded && oauthToken) {
-                var view = new google.picker.View(google.picker.ViewId.DOCUMENTS);
-                view.setMimeTypes("image/png,image/jpeg,image/jpg");
+                var view = new google.picker.View(google.picker.ViewId.DOCS);
+                view.setMimeTypes("application/pdf,application/msword");
                 var picker = new google.picker.PickerBuilder()
                     .enableFeature(google.picker.Feature.NAV_HIDDEN)
                     .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
