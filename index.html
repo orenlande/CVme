@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="he" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <form id="submit-form" data-abide novalidate>
+            <div data-abide-error class="alert callout" style="display: none;">
+                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                        <label>שם מלא
+                        <input required id="customer_full_name" class="form-input" type="text">
+                        </label>
+                    </div>
+                    <div class="small-12 cell">
+                        <label>אי-מייל
+                        <input required id="customer_email" pattern="email" class="form-input" type="text">
+                        </label>
+                    </div>
+                    <div class="small-12 cell">
+                        <label>טלפון
+                        <input required id="customer_phone" pattern="number" class="form-input" type="text">
+                        </label>
+                    </div>
+                    <div class="small-12 cell">
+                        <label>תמצית קורות חיים
+                        <textarea required id="customer_short_desc" class="form-input"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="small-12 cell">
+                        <label>טלפון לשלוח אליו
+                        <input required id="phone_to_send" pattern="number" type="text">
+                        </label>
+                    </div>
+
+                    <button type="button" class="button" id="auth">Authenticate</button>
+                    <div id="result"></div>
+
+                    <div class="small-12 cell">
+                        <button type="submit" class="button">שלח</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/underscore-min.js"></script>
+
+        <!-- The Google API Loader script. -->
+        <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+        <script type="text/javascript">
+            $("#auth").on("click", function(){
+                var viewId = google.picker.ViewId.DOCUMENTS;
+                var setOAuthToken = true;
+                
+                if(authApiLoaded && !oauthToken) {
+                    viewIdForhandleAuthResult = viewId;
+                    window.gapi.auth.authorize(
+                        {
+                        'client_id': clientId,
+                        'scope': scope,
+                        'immediate': false
+                        },
+                        handleAuthResult
+                    );
+                } else {
+                    createPicker(viewId, setOAuthToken);
+                }           
+            }) 
+        </script>
+            
+		<!-- Compressed CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation.min.css" integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA==" crossorigin="anonymous">
+
+        <!-- Compressed JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js" integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw==" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation-rtl.min.css" integrity="sha256-XlxeWxDsQfPdu4qiEAxQAng3/qnJhvZOZN/gZn0p71A= sha384-S/sFafRa3RAsKpyPwVCUZO8sjM+Sxh4qrVEC/XA9X0LXu7PduBaHpp3oWUyUq0qS sha512-T65eRA7TK5abF14H5Ovs6ov3lRSJkMEY7aI4B6nEtBA+kbtdhXwC2KO46kS4f68ysRXW5+Zu66054x369DRvYw==" crossorigin="anonymous">
+    </body>
+</html>
