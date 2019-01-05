@@ -21,39 +21,36 @@
 
         <!-- Add your site or application content here -->
         <form id="submit-form" data-abide novalidate>
-            <div data-abide-error class="alert callout" style="display: none;">
-                <p><i class="fi-alert"></i> There are some errors in your form.</p>
-            </div>
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>שם מלא
                         <input required id="customer_full_name" class="form-input" type="text">
                         </label>
                     </div>
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>אי-מייל
                         <input required id="customer_email" pattern="email" class="form-input" type="text">
                         </label>
                     </div>
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>טלפון
                         <input required id="customer_phone" pattern="number" class="form-input" type="text">
                         </label>
                     </div>
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>תמצית קורות חיים
                         <textarea required id="customer_short_desc" class="form-input"></textarea>
                         </label>
                     </div>
 
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>טלפון לשלוח אליו
                         <input required id="phone_to_send" pattern="number" type="text">
                         </label>
                     </div>
 
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <label>הוספת קובץ מגוגל דרייב <b>שימו לב: יש לוודא שהקובץ נגיש ציבורית!</b></label>
                         <button type="button" class="button" id="pick">בחר קובץ</button>
                         <b id="selected_file_name"></b>
@@ -61,12 +58,27 @@
                         <input type="hidden" id="customer_cv_file_link"/>
                     </div>
 
-                    <div class="small-12 cell">
+                    <div class="medium-6 medium-offset-3 cell">
                         <button type="submit" class="button">שלח</button>
                     </div>
                 </div>
             </div>
         </form>
+
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="speech-wrapper rtl">
+                        <div class="bubble">
+                            <div class="txt">
+                                <p class="name">ישראל ישראלי</p>
+                                <p class="message">רשמו משהו...</p>
+                                <span class="timestamp">10:20 pm</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
