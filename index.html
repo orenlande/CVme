@@ -69,10 +69,7 @@
         <script src="js/main.js"></script>
         <script src="js/vendor/underscore-min.js"></script>
 
-        <!-- The Google API Loader script. -->
-        <script src="https://www.google.com/jsapi?key=AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw"></script>
-        <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
-        
+        <script src="js/filepicker.js"></script>
         <script type="text/javascript">
             // $("#auth").on("click", function(){
             //     var viewId = google.picker.ViewId.DOCUMENTS;
@@ -94,6 +91,7 @@
             // }) 
 
             function initPicker() {
+                console.log('aaaa');
                 var picker = new FilePicker({
                     apiKey: 'AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw',
                     clientId: '344473574277-i16ved7bkg1mu58focj6igl8p221fcm2.apps.googleusercontent.com',
@@ -105,6 +103,10 @@
                 });	
             }
         </script>
+
+        <!-- The Google API Loader script. -->
+        <script src="https://www.google.com/jsapi?key=AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw"></script>
+        <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
             
 		<!-- Compressed CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation.min.css" integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA==" crossorigin="anonymous">
