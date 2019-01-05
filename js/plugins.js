@@ -96,6 +96,7 @@
         console.log(data);
         alert('The user selected: ' + fileId);
 
+        $("#selected_file_name").text('הקובץ שנבחר: ' + data.docs[0].name)
         $("#customer_cv_file_link").val(data.docs[0].url)
       }
     }
