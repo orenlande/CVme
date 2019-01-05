@@ -62,28 +62,48 @@
             }
         
             // Create and render a Picker object for searching images.
-            function createPicker(viewId, setOAuthToken) {
-                if (authApiLoaded && pickerApiLoaded) {
-                var picker;
-                
-                if(authApiLoaded && oauthToken && setOAuthToken) {
-                    picker = new google.picker.PickerBuilder().
-                    addView(viewId).
-                    setOAuthToken(oauthToken).
-                    setDeveloperKey(developerKey).
-                    setCallback(pickerCallback).
-                    build();
-                } else {
-                    picker = new google.picker.PickerBuilder().
-                    addView(viewId).
-                    setDeveloperKey(developerKey).
-                    setCallback(pickerCallback).
-                    build();
-                }
-                
-                picker.setVisible(true);
-                }
+            function createPicker() {
+              if (pickerApiLoaded && oauthToken) {
+                var viewId = google.picker.ViewId.DOCUMENTS;
+                var view = new google.picker.View(google.picker.ViewId.DOCS);
+                view.setMimeTypes("image/png,image/jpeg,image/jpg");
+                var picker = new google.picker.PickerBuilder()
+                    .enableFeature(google.picker.Feature.NAV_HIDDEN)
+                    .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+                    .setAppId(appId)
+                    .setOAuthToken(oauthToken)
+                    .addView(viewId)
+                    .addView(new google.picker.DocsUploadView())
+                    .setDeveloperKey(developerKey)
+                    .setCallback(pickerCallback)
+                    .setOrigin(google.script.host.origin)
+                    .build();
+                 picker.setVisible(true);
+              }
             }
+
+            // function createPicker(viewId, setOAuthToken) {
+            //     if (authApiLoaded && pickerApiLoaded) {
+            //     var picker;
+                
+            //     if(authApiLoaded && oauthToken && setOAuthToken) {
+            //         picker = new google.picker.PickerBuilder().
+            //         addView(viewId).
+            //         setOAuthToken(oauthToken).
+            //         setDeveloperKey(developerKey).
+            //         setCallback(pickerCallback).
+            //         build();
+            //     } else {
+            //         picker = new google.picker.PickerBuilder().
+            //         addView(viewId).
+            //         setDeveloperKey(developerKey).
+            //         setCallback(pickerCallback).
+            //         build();
+            //     }
+                
+            //     picker.setVisible(true);
+            //     }
+            // }
         
             // A simple callback implementation.
             function pickerCallback(data) {
