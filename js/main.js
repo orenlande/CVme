@@ -15,6 +15,10 @@ var directory = {
 		{
 			field_name: 'customer_short_desc',
 			label: 'תמצית קורות חיים'
+		},
+		{
+			field_name: 'customer_cv_file_link',
+			label: 'קישור לקובץ בדרייב'
 		}
 	]
 }
@@ -39,10 +43,9 @@ $(document).ready(function(){
 			$(this).find('.form-input').each(function(){
 				var field_name = $(this).attr('id');
 				var res = _.findWhere(directory['fields'], {field_name: field_name});
+				var val = $(this).val();
 
-				console.log(res);
-
-				text += res['label'] + ': ' + $(this).val() + "\n------\n";
+				text += res['label'] + ': ' + val + "\n------\n";
 				
 			});
 
