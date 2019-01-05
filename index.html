@@ -28,7 +28,7 @@
             var appId = "344473574277";
         
             // Scope to use to access user's Drive items.
-            var scope = ['https://www.googleapis.com/auth/drive'];
+            var scope = ['https://www.googleapis.com/auth/drive.readonly'];
         
             var pickerApiLoaded = false;
             var oauthToken;
@@ -67,9 +67,8 @@
             function createPicker() {
                 console.log(pickerApiLoaded, oauthToken);
               if (pickerApiLoaded && oauthToken) {
-                var viewId = google.picker.ViewId.DOCUMENTS;
-                var view = new google.picker.View(google.picker.ViewId.DOCS);
-                // view.setMimeTypes("image/png,image/jpeg,image/jpg");
+                var view = new google.picker.View(google.picker.ViewId.DOCUMENTS);
+                view.setMimeTypes("image/png,image/jpeg,image/jpg");
                 var picker = new google.picker.PickerBuilder()
                     .enableFeature(google.picker.Feature.NAV_HIDDEN)
                     .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
