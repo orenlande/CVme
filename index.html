@@ -53,7 +53,7 @@
                         </label>
                     </div>
 
-                    <button type="button" class="button" id="auth">התחבר</button>
+                    <button type="button" class="button" id="pick">התחבר</button>
                     <div id="result" style="width:100%; height:300px; border:1px solid black;"></div>
 
                     <div class="small-12 cell">
@@ -70,26 +70,40 @@
         <script src="js/vendor/underscore-min.js"></script>
 
         <!-- The Google API Loader script. -->
-        <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+        <script src="https://www.google.com/jsapi?key=AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw"></script>
+        <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+        
         <script type="text/javascript">
-            $("#auth").on("click", function(){
-                var viewId = google.picker.ViewId.DOCUMENTS;
-                var setOAuthToken = true;
+            // $("#auth").on("click", function(){
+            //     var viewId = google.picker.ViewId.DOCUMENTS;
+            //     var setOAuthToken = true;
                 
-                if(authApiLoaded && !oauthToken) {
-                    viewIdForhandleAuthResult = viewId;
-                    window.gapi.auth.authorize(
-                        {
-                        'client_id': clientId,
-                        'scope': scope,
-                        'immediate': false
-                        },
-                        handleAuthResult
-                    );
-                } else {
-                    createPicker(viewId, setOAuthToken);
-                }           
-            }) 
+            //     if(authApiLoaded && !oauthToken) {
+            //         viewIdForhandleAuthResult = viewId;
+            //         window.gapi.auth.authorize(
+            //             {
+            //             'client_id': clientId,
+            //             'scope': scope,
+            //             'immediate': false
+            //             },
+            //             handleAuthResult
+            //         );
+            //     } else {
+            //         createPicker(viewId, setOAuthToken);
+            //     }           
+            // }) 
+
+            function initPicker() {
+                var picker = new FilePicker({
+                    apiKey: 'AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw',
+                    clientId: '344473574277-i16ved7bkg1mu58focj6igl8p221fcm2.apps.googleusercontent.com',
+                    buttonEl: document.getElementById('pick'),
+                    onSelect: function(file) {
+                        console.log(file);
+                        alert('Selected ' + file.title);
+                    }
+                });	
+            }
         </script>
             
 		<!-- Compressed CSS -->
