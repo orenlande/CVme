@@ -46,7 +46,7 @@
     }
 
     function onAuthApiLoad() {
-        console.log('auth loaded')
+        // console.log('auth loaded')
       window.gapi.auth.authorize(
           {
             'client_id': clientId,
@@ -57,7 +57,7 @@
     }
 
     function onPickerApiLoad() {
-        console.log('api loaded')
+        // console.log('api loaded')
       pickerApiLoaded = true;
       createPicker();
     }
@@ -71,7 +71,7 @@
 
     // Create and render a Picker object for searching images.
     function createPicker() {
-        console.log(pickerApiLoaded, oauthToken);
+        // console.log(pickerApiLoaded, oauthToken);
       if (pickerApiLoaded && oauthToken) {
         var view = new google.picker.View(google.picker.ViewId.DOCS);
         view.setMimeTypes("application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document");
@@ -93,7 +93,7 @@
     function pickerCallback(data) {
       if (data.action == google.picker.Action.PICKED) {
         var fileId = data.docs[0].id;
-        console.log(data);
+        // console.log(data);
         $("#selected_file_name").text('הקובץ שנבחר: ' + data.docs[0].name)
         $("#customer_cv_file_link").val(data.docs[0].url)
 

@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 		// form validation failed
 		.on("forminvalid.zf.abide", function(ev,frm) {
-			console.log("Form id "+ev.target.id+" is invalid");
+			// console.log("Form id "+ev.target.id+" is invalid")
 		})
 		// form validation passed, form will submit if submit event not returned false
 		.on("formvalid.zf.abide", function(ev,frm) {
@@ -57,8 +57,6 @@ $(document).ready(function(){
 				}
 				
 			});
-
-			console.log(text);
 
 			ga('send', {
 				hitType: 'event',
@@ -81,7 +79,6 @@ $(document).ready(function(){
 		// to prevent form from submitting upon successful validation
 		.on("submit", function(ev) {
 			ev.preventDefault();
-			console.log("Submit for form id "+ev.target.id+" intercepted");
 		});
 })
 
