@@ -13,6 +13,17 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131754497-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131754497-1');
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -20,60 +31,67 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <form id="submit-form" data-abide novalidate>
+        <div class="grid-y">
+            <form id="submit-form" data-abide novalidate>
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>שם מלא
+                            <input required id="customer_full_name" class="form-input" type="text">
+                            </label>
+                        </div>
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>אי-מייל
+                            <input required id="customer_email" pattern="email" class="form-input" type="text">
+                            </label>
+                        </div>
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>טלפון
+                            <input required id="customer_phone" pattern="number" class="form-input" type="text">
+                            </label>
+                        </div>
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>תמצית קורות חיים
+                            <textarea required id="customer_short_desc" class="form-input"></textarea>
+                            </label>
+                        </div>
+
+                        
+
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>הוספת קובץ מגוגל דרייב <b>שימו לב: יש לוודא שהקובץ נגיש ציבורית!</b></label>
+                            <button type="button" class="button" id="pick">בחר קובץ</button>
+                        </div>
+                        <div class="medium-6 medium-offset-3 cell">
+                            <b id="selected_file_name"></b>
+                        </div>
+
+                        <div class="medium-6 medium-offset-3 cell">
+                            <label>טלפון לשלוח אליו <b>מספר סלולר ישראלי תקין בלבד</b> <small>(0505000500)</small>
+                            <input required id="phone_to_send" pattern="valid_israeli_cellular" type="text">
+                            </label>
+                        </div>
+                        
+                        <input type="hidden" class="form-input" id="customer_cv_file_link"/>
+                        <div class="medium-6 medium-offset-3 cell">
+                            <button type="submit" class="button">שלח</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <iframe id="whatsapp-linking" src="" style="width:0; height:0;"></iframe>
+
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-6 medium-offset-3 cell">
-                        <label>שם מלא
-                        <input required id="customer_full_name" class="form-input" type="text">
-                        </label>
-                    </div>
-                    <div class="medium-6 medium-offset-3 cell">
-                        <label>אי-מייל
-                        <input required id="customer_email" pattern="email" class="form-input" type="text">
-                        </label>
-                    </div>
-                    <div class="medium-6 medium-offset-3 cell">
-                        <label>טלפון
-                        <input required id="customer_phone" pattern="number" class="form-input" type="text">
-                        </label>
-                    </div>
-                    <div class="medium-6 medium-offset-3 cell">
-                        <label>תמצית קורות חיים
-                        <textarea required id="customer_short_desc" class="form-input"></textarea>
-                        </label>
-                    </div>
-
-                    <div class="medium-6 medium-offset-3 cell">
-                        <label>טלפון לשלוח אליו
-                        <input required id="phone_to_send" pattern="number" type="text">
-                        </label>
-                    </div>
-
-                    <div class="medium-6 medium-offset-3 cell">
-                        <label>הוספת קובץ מגוגל דרייב <b>שימו לב: יש לוודא שהקובץ נגיש ציבורית!</b></label>
-                        <button type="button" class="button" id="pick">בחר קובץ</button>
-                        <b id="selected_file_name"></b>
-
-                        <input type="hidden" class="form-input" id="customer_cv_file_link"/>
-                    </div>
-
-                    <div class="medium-6 medium-offset-3 cell">
-                        <button type="submit" class="button">שלח</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="medium-6 medium-offset-3 cell">
-                    <div class="speech-wrapper rtl">
-                        <div class="bubble">
-                            <div class="txt">
-                                <p class="name">ישראל ישראלי</p>
-                                <p class="message">רשמו משהו...</p>
-                                <span class="timestamp">10:20 pm</span>
+                        <div class="speech-wrapper rtl">
+                            <div class="bubble">
+                                <div class="txt">
+                                    <p class="name">ישראל ישראלי</p>
+                                    <p class="message">כותב\ת...</p>
+                                    <span class="timestamp">10:20 pm</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -84,19 +102,17 @@
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <!-- Compressed JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js" integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw==" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/vendor/underscore-min.js"></script>
-
 
         <!-- The Google API Loader script. -->
         <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
             
 		<!-- Compressed CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation.min.css" integrity="sha256-1mcRjtAxlSjp6XJBgrBeeCORfBp/ppyX4tsvpQVCcpA= sha384-b5S5X654rX3Wo6z5/hnQ4GBmKuIJKMPwrJXn52ypjztlnDK2w9+9hSMBz/asy9Gw sha512-M1VveR2JGzpgWHb0elGqPTltHK3xbvu3Brgjfg4cg5ZNtyyApxw/45yHYsZ/rCVbfoO5MSZxB241wWq642jLtA==" crossorigin="anonymous">
-
-        <!-- Compressed JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js" integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw==" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation-rtl.min.css" integrity="sha256-XlxeWxDsQfPdu4qiEAxQAng3/qnJhvZOZN/gZn0p71A= sha384-S/sFafRa3RAsKpyPwVCUZO8sjM+Sxh4qrVEC/XA9X0LXu7PduBaHpp3oWUyUq0qS sha512-T65eRA7TK5abF14H5Ovs6ov3lRSJkMEY7aI4B6nEtBA+kbtdhXwC2KO46kS4f68ysRXW5+Zu66054x369DRvYw==" crossorigin="anonymous">
     </body>

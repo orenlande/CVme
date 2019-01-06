@@ -24,7 +24,7 @@
 // Place any jQuery/helper plugins in here.
  // The Browser API key obtained from the Google API Console.
     // Replace with your own Browser API key, or your own key.
-    var developerKey = 'AIzaSyC86Z-BbOuO-BGI2CvMmUHO3iR0FB02eXw';
+    var developerKey = 'AIzaSyCknStaGPdP5eaOHGSTWnpNPPsVi2gMDrk';
 
     // The Client ID obtained from the Google API Console. Replace with your own Client ID.
     var clientId = "344473574277-i16ved7bkg1mu58focj6igl8p221fcm2.apps.googleusercontent.com"

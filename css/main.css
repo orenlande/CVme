@@ -94,6 +94,14 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+    button.button{
+        background-color:#009688;
+    }
+
+    button.button:hover, button.button:focus{
+        background-color:#00776b
+    }
+
     body::after {
         content: "";
         background-image: url("../img/background.png");
@@ -105,6 +113,10 @@ textarea {
         right: 0;
         position: absolute;
         z-index: -1;   
+      }
+
+      #submit-form{
+          margin-top:100px;
       }
 
    .speech-wrapper {
