@@ -25,10 +25,15 @@ var directory = {
 
 Foundation.Abide.defaults.patterns['valid_israeli_cellular'] = /^05\d([-]{0,1})\d{7}$/;
 
+const urlParams = new URLSearchParams(window.location.search);
+const pre_phone = urlParams.get('phone');
+
+if(pre_phone){
+	$('#phone_to_send').val(pre_phone)
+}
+
 $(document).ready(function(){
 	$(document).foundation();
-
-
 
 	$("#submit-form")
 		.on('blur', '.form-input', function(){
@@ -47,7 +52,9 @@ $(document).ready(function(){
 				var res = _.findWhere(directory['fields'], {field_name: field_name});
 				var val = $(this).val();
 
-				text += res['label'] + ': ' + val + "\n------\n";
+				if(val != ''){
+					text += res['label'] + ': ' + val + "\n------\n";
+				}
 				
 			});
 
@@ -60,22 +67,16 @@ $(document).ready(function(){
 				eventLabel: 'Deliver to Whatsapp'
 			});
 
-			var base_url = "https://api.whatsapp.com/send";
-			var phone_to_send = $("#phone_to_send").val().replace("+", "");
-
-			var patt = new RegExp(/^05\d([-]{0,1})\d{7}$/);
-				valid_israeli = patt.test(phone_to_send);
-
-				console.log(valid_israeli);
+			// var base_url = "https://api.whatsapp.com/send";
+			var base_url = "https://web.whatsapp.com/send";
+			var phone_to_send = '972' + $("#phone_to_send").val().replace("+", "");
 
 				text = text.replace('{{full_name}}', $('#customer_full_name').val());
 				text = text.replace('{{phone_number}}', $('#customer_phone').val());
 
 			base_url = base_url + '?phone=' + phone_to_send + '&text=' + encodeURI(text);
 			
-			document.getElementById('whatsapp-linking').src = base_url;
-			$('#whatsapp-linking').css({'height':'300px', 'width':'100%'});
-			console.log(base_url);
+			window.open(base_url, '_blank');
 		})
 		// to prevent form from submitting upon successful validation
 		.on("submit", function(ev) {
