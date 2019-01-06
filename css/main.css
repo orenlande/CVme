@@ -119,6 +119,10 @@ textarea {
           margin-top:100px;
       }
 
+    #whatsapp-linking{
+        border:0;
+    }
+
    .speech-wrapper {
     padding: 30px 40px;
     direction:ltr;

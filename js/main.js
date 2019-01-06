@@ -38,8 +38,6 @@ $(document).ready(function(){
 		// form validation failed
 		.on("forminvalid.zf.abide", function(ev,frm) {
 			console.log("Form id "+ev.target.id+" is invalid");
-
-			$('#whatsapp-linking').attr('src', 'https://www.google.com').css('height:300px; width:100%;');
 		})
 		// form validation passed, form will submit if submit event not returned false
 		.on("formvalid.zf.abide", function(ev,frm) {
@@ -75,7 +73,8 @@ $(document).ready(function(){
 
 			base_url = base_url + '?phone=' + phone_to_send + '&text=' + encodeURI(text);
 			
-			$('#whatsapp-linking').attr('src', base_url).css('height:300px; width:100%;');
+			document.getElementById('whatsapp-linking').src = base_url;
+			$('#whatsapp-linking').css({'height':'300px', 'width':'100%'});
 			console.log(base_url);
 		})
 		// to prevent form from submitting upon successful validation
