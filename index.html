@@ -46,7 +46,7 @@
                 <div class="grid-container">
                     <div class="grid-x grid-padding-x">    
                         <div class="medium-6 medium-offset-3 cell">
-                            <h1 class="text-ltr" style="font-family: 'Patrick Hand', cursive; font-size:80px;">CVme</h1>
+                            <h1 class="text-ltr" style="font-family: 'Permanent Marker', cursive; font-size:80px;">CVme</h1>
                             <h2 style="font-family: 'Amatic SC', cursive; font-size:20px;">קורות חיים בוואטסאפ, ישירות ופשטות.</h2>
                         </div>
                         <div class="medium-6 medium-offset-3 cell">
@@ -73,7 +73,7 @@
                         
 
                         <div class="medium-6 medium-offset-3 cell">
-                            <label>הוספת קובץ מגוגל דרייב <b>שימו לב: יש לוודא שהקובץ נגיש ציבורית!</b></label>
+                            <label>הוספת קובץ מגוגל דרייב<br/><b>שימו לב: יש לוודא שהקובץ נגיש ציבורית!</b> <a href="javscript:;" data-open="google-share-explain">לחצו כאן להסבר מהיר איך לשתף</a></label>
                             <button type="button" class="button" id="pick">בחר קובץ</button>
                         </div>
                         <div class="medium-6 medium-offset-3 cell">
@@ -88,11 +88,33 @@
                         
                         <input type="hidden" class="form-input" id="customer_cv_file_link"/>
                         <div class="medium-6 medium-offset-3 cell">
-                            <button type="submit" class="button">שלח</button>
+                            <button type="submit" class="button">שלח</button><br/>
+                            <small>בלחיצה על שלח אני מאשר\ת <a href="tac.html">את תנאי השימוש</a></small>
                         </div>
                     </div>
                 </div>
             </form>
+
+            <div class="reveal" id="google-share-explain" data-reveal>
+                <ol>
+                    <li>פותחים את <a href="https://drive.google.com/" target="_blank" rel="noopener">Google Drive</a>‏, <a href="https://docs.google.com/" target="_blank" rel="noopener">Docs</a>‏, <a href="https://sheets.google.com/" target="_blank" rel="noopener">Sheets</a> או <a href="https://slides.google.com/" target="_blank" rel="noopener">Slides</a> במחשב.</li>
+                    <li>לוחצים על הקובץ שרוצים לשתף.</li>
+                    <li>לוחצים על 'שיתוף' או על סמל השיתוף <img src="img/share_icon.png" width="18" height="18" alt="Share" title="Share">.</li>
+   
+                    <li>לוחצים על <strong>הצגת קישור לשיתוף</strong>.</li>
+                    <li>לוחצים על הסמל של החץ הפונה למטה <img src="img/arrow_down.png" width="18" height="18" alt="Down" title="Down"> ליד הכיתוב "כל מי שיש לו את הקישור".</li>
+                    <li>לוחצים על <strong>הסמל 'עוד' <img src="img/arrow_right.png" width="18" height="18" alt="ואז" title="ואז"> מופעל - ציבורי באינטרנט</strong>.</li>
+                    <li>לוחצים על <strong>שמירה</strong>.
+                        <ul>
+                        <li>בוחרים רמת גישה לקובץ לאנשים שמשתפים אותו איתם. <a target="_blank" href="https://support.google.com/drive/answer/2494822#view_comment_edit">רוצים לדעת מה קורה כשמשתפים קבצים ומאפשרים להגיב עליהם, להציג אותם או לערוך אותם?</a></li>
+                        </ul>
+                    </li>
+                    <li>לוחצים על <strong>סיום</strong>.</li>
+                </ol>
+                <button class="close-button" style="right:0;left:1rem;" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
             <div>
                 <div class="grid-container">
@@ -113,7 +135,7 @@
             </div>
         </div>
 
-        <footer>
+        <!-- <footer>
             <div class="grid-x grid-padding-x">
                 <div class="medium-6 cell">
                     <p>נעשה על ידי אורן לנדה ובוריס מאירוביץ'</p>
@@ -122,7 +144,7 @@
                     <p>Made by Oren Lande and Boris Meyerovich</p>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -141,6 +163,6 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/css/foundation-rtl.min.css" integrity="sha256-XlxeWxDsQfPdu4qiEAxQAng3/qnJhvZOZN/gZn0p71A= sha384-S/sFafRa3RAsKpyPwVCUZO8sjM+Sxh4qrVEC/XA9X0LXu7PduBaHpp3oWUyUq0qS sha512-T65eRA7TK5abF14H5Ovs6ov3lRSJkMEY7aI4B6nEtBA+kbtdhXwC2KO46kS4f68ysRXW5+Zu66054x369DRvYw==" crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Patrick+Hand" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Permanent+Marker" rel="stylesheet">
     </body>
 </html>
