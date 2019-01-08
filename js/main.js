@@ -58,13 +58,6 @@ $(document).ready(function(){
 				
 			});
 
-			ga('send', {
-				hitType: 'event',
-				eventCategory: 'Forms',
-				eventAction: 'submit',
-				eventLabel: 'Deliver to Whatsapp'
-			});
-
 			// var base_url = "https://api.whatsapp.com/send";
 			var base_url = "https://web.whatsapp.com/send";
 			var phone_to_send = '972' + $("#phone_to_send").val().replace("+", "");
@@ -73,6 +66,13 @@ $(document).ready(function(){
 				text = text.replace('{{phone_number}}', $('#customer_phone').val());
 
 			base_url = base_url + '?phone=' + phone_to_send + '&text=' + encodeURI(text);
+
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'Forms',
+				eventAction: 'submit',
+				eventLabel: 'Deliver to ' + phone_to_send
+			});
 			
 			window.open(base_url, '_blank');
 		})
