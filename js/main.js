@@ -58,8 +58,8 @@ $(document).ready(function(){
 				
 			});
 
-			// var base_url = "https://api.whatsapp.com/send";
-			var base_url = "https://web.whatsapp.com/send";
+			var base_url = "https://api.whatsapp.com/send";
+			// var base_url = "https://web.whatsapp.com/send";
 			var phone_to_send = '972' + $("#phone_to_send").val().replace("+", "");
 
 				text = text.replace('{{full_name}}', $('#customer_full_name').val());
